@@ -18,7 +18,7 @@ class MainPage extends React.Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({elements:form.nFib.value})
-        }).then(res => res.json()).then(data => {
+        }).then(data => {
             this.setState({
                 fibonacci: data.fibonacci,
                 sorted: data.sorted
