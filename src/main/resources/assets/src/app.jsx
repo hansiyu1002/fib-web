@@ -18,10 +18,10 @@ class MainPage extends React.Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({elements:form.nFib.value})
-        }).then(res => {
+        }).then(res => res.json()).then(data => {
             this.setState({
-                fibonacci: res.fibonacci,
-                sorted: res.sorted
+                fibonacci: data.fibonacci,
+                sorted: data.sorted
             })
         }).catch(function(error) {
             console.log(error)
